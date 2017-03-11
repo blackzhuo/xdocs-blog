@@ -4,13 +4,13 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="keywords" content="">
-    <meta name="description" content="a blogs for me">
-    <meta name="author" content="amos">
-    <link rel="icon" href="favicon.ico">
-    <title>aboutBlogs</title>
-    <link href="vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <link href="css/clean-blog.min.css" rel="stylesheet">
+    <meta name="keywords" content="{{keywords}}">
+    <meta name="description" content="{{description}}">
+    <meta name="author" content="{{author}}">
+    <link rel="icon" href="{{relative_root_path}}favicon.ico">
+    <title>{{page_title}}{{name}}</title>
+    <link href="{{relative_root_path}}vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="{{relative_root_path}}css/clean-blog.min.css" rel="stylesheet">
     <link href="vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic' rel='stylesheet' type='text/css'>
     <link href='https://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
@@ -27,15 +27,15 @@
                     <span class="sr-only">Toggle navigation</span>
                     Menu <i class="fa fa-bars"></i>
                 </button>
-                <a class="navbar-brand" href="index.html">Blogs</a>
+                <a class="navbar-brand" href="{{relative_root_path}}index.html">{{name}}</a>
             </div>
             <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
                     <li>
-                        <a href="index.html">Home</a>
+                        <a href="{{relative_root_path}}index.html">Home</a>
                     </li>
                     <li>
-                        <a href="about.html">About</a>
+                        <a href="{{relative_root_path}}about.html">About</a>
                     </li>
                 </ul>
             </div>
@@ -46,9 +46,9 @@
             <div class="row">
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <div class="site-heading">
-                        <h1>Blogs</h1>
+                        <h1>{{name}}</h1>
                         <hr class="small">
-                        <span class="subheading">a blogs for me</span>
+                        <span class="subheading">{{description}}</span>
                     </div>
                 </div>
             </div>
@@ -57,13 +57,21 @@
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <p>概括一下内容吧...
-概括一下内容吧...
-概括一下内容吧...</p>
-<!--description-->
-<p>正文从这里开始~</p>
-
+                {{{content}}}
+                {{#isIndex}}
+                {{{chapterList}}}
+                {{/isIndex}}
                 <ul class="pager">
+                    {{#prev}}
+                    <li class="previous">
+                        <a href="{{path}}">&larr; {{name}}</a>
+                    </li>
+                    {{/prev}}
+                    {{#next}}
+                    <li class="next">
+                        <a href="{{path}}">{{name}} &rarr;</a>
+                    </li>
+                    {{/next}}
                 </ul>
             </div>
         </div>
@@ -75,7 +83,7 @@
                 <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                     <ul class="list-inline text-center">
                         <li>
-                            <a href="https:&#x2F;&#x2F;twitter.com&#x2F;xxx">
+                            <a href="{{twitter}}">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
@@ -83,7 +91,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https:&#x2F;&#x2F;facebook.com&#x2F;xxx">
+                            <a href="{{facebook}}">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
@@ -91,7 +99,7 @@
                             </a>
                         </li>
                         <li>
-                            <a href="https:&#x2F;&#x2F;github.com&#x2F;xxx">
+                            <a href="{{github}}">
                                 <span class="fa-stack fa-lg">
                                     <i class="fa fa-circle fa-stack-2x"></i>
                                     <i class="fa fa-github fa-stack-1x fa-inverse"></i>
@@ -101,7 +109,7 @@
                     </ul>
                     <p class="copyright text-muted">
                         Copyright &copy; 
-                        <a href="index.html" title="amos">amos</a>
+                        <a href="{{relative_root_path}}index.html" title="{{author}}">{{author}}</a>
                         Build by
                         <a href="https://github.com/blackzhuo/xdocs" target="_blank">xdocs</a>
                     </p>
@@ -109,10 +117,10 @@
             </div>
         </div>
     </footer>
-    <script src="vendor/jquery/jquery.min.js"></script>
-    <script src="vendor/bootstrap/js/bootstrap.min.js"></script>
-    <script src="js/jqBootstrapValidation.js"></script>
-    <script src="js/contact_me.js"></script>
-    <script src="js/clean-blog.min.js"></script>
+    <script src="{{relative_root_path}}vendor/jquery/jquery.min.js"></script>
+    <script src="{{relative_root_path}}vendor/bootstrap/js/bootstrap.min.js"></script>
+    <script src="{{relative_root_path}}js/jqBootstrapValidation.js"></script>
+    <script src="{{relative_root_path}}js/contact_me.js"></script>
+    <script src="{{relative_root_path}}js/clean-blog.min.js"></script>
 </body>
 </html>
